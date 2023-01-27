@@ -1,0 +1,41 @@
+/* Create table about the people and what they do here */
+
+CREATE TABLE famous_people (id INTEGER PRIMARY KEY, firstname TEXT, lastname TEXT, gender TEXT, age TEXT, country text);
+
+INSERT INTO famous_people VALUES (1, "Taylor", "Swift", "Female", "33", "United States");
+INSERT INTO famous_people VALUES (2, "Keith", "Urban", "Male", "55", "New Zealand");
+INSERT INTO famous_people VALUES (3, "Sam", "Smith", "Male", "30", "United Kingdom");
+INSERT INTO famous_people VALUES (4, "Katy", "Perry", "Female", "38", "United States");
+INSERT INTO famous_people VALUES (5, "Ariana", "Grande-Butera", "Female", "29", "United States");
+INSERT INTO famous_people VALUES (6, "Rhianna", "Fenty", "Female", "34", "Barbados");
+INSERT INTO famous_people VALUES (7, "Beyonce", "Knowles-Carter", "Female", "41", "United States");
+INSERT INTO famous_people VALUES (8, "Chad", "Kroeger", "Male", "48", "Canada");
+
+
+
+CREATE TABLE songs (id INTEGER PRIMARY KEY,     artist_id INTEGER,
+    title TEXT,
+    album TEXT);
+
+INSERT INTO songs (artist_id, title, album)
+    VALUES (1, "Lavender Haze", "Midnights");
+INSERT INTO songs (artist_id, title, album)
+    VALUES (2, "The Fighter", "Ripcord");
+INSERT INTO songs (artist_id, title, album)
+    VALUES (3, "Unholy", "Gloria");
+INSERT INTO songs (artist_id, title, album)
+    VALUES (4, "Roar", "Prism");
+INSERT INTO songs (artist_id, title, album)
+    VALUES (5, "Into You", "Dangerous Woman");
+INSERT INTO songs (artist_id, title, album)
+    VALUES (6, "Love on the Brain", "Anti");
+INSERT INTO songs (artist_id, title, album)
+    VALUES (7, "Energy", "Renaissance");
+INSERT INTO songs (artist_id, title, album)
+    VALUES (8, "Far Away", "All the Right Reasons");
+
+
+SELECT famous_people.firstname, famous_people.lastname, songs.title, songs.album
+FROM famous_people
+JOIN songs
+ON famous_people.id = songs.artist_id;
